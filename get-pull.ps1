@@ -1,16 +1,10 @@
 param(
-    # Remote repository to connect
-    [Parameter(Mandatory)]
-    [string]$remoteRepository,
-    # Project of remote repository
-    [Parameter(Mandatory)]
-    [string]$project,
-    # Branch
-    [Parameter(Mandatory)]
-    [string]$branch,
     # Local repository
     [Parameter(Mandatory)]
     [string]$localRepository,
+    # Branch
+    [Parameter(Mandatory)]
+    [string]$branch,
     # Scripts repostory
     [Parameter(Mandatory)]
     [string]$scriptsRepository
@@ -28,7 +22,9 @@ Write-Host "*******************************";
 Write-Host "";
 Write-Host "";
 Set-Location $localRepository;
+git checkout $branch;
 git pull;
 git status;
+Set-Location $scriptsRepository;
 Write-Host "*******************************";
 
