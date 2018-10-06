@@ -1,1 +1,7 @@
-write-host "Hola, mundo!";
+param(
+    [# Remote repository to connect
+    [Parameter(Mandatory)]
+    [string]
+    $remoteRepository]
+)
+
